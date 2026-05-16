@@ -181,7 +181,8 @@ Built-in story structure templates are provided for:
 ```
 virtualocstory/
 ├── SKILL.md                       # Skill definition (loaded by Claude Code)
-├── README.md                      # This file
+├── README.md                      # Chinese version of README
+├── README.en-US.md                # This file(English version of README)
 ├── assets/
 │   └── oc_template.json           # Default profile template
 ├── evals/
