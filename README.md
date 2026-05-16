@@ -1,4 +1,4 @@
-# VirtualOCstory
+# 虚拟OC故事.skill
 
 一个用于与 AI 共同创作原创角色（OC）并为其编写故事的 [Claude Code](https://claude.ai/code) 技能。
 
