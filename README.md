@@ -1,7 +1,8 @@
 # VirtualOCstory
 
 A [Claude Code](https://claude.ai/code) skill for co-creating Original Characters (OCs) with AI and writing stories about them.
-[切换到中文]([https://claude.ai/code](https://github.com/Okbackv/VirtualOCstory/blob/main/README.zh-CN.md))
+
+[切换到中文](https://github.com/Okbackv/VirtualOCstory/blob/main/README.zh-CN.md)
 ## Overview
 
 VirtualOCstory turns Claude Code into your personal OC (Original Character) assistant. It helps you create detailed character profiles, build fictional worlds, track character relationships, manage special terminology, generate stories, and export them as `.txt` or `.docx` files — all while learning about your creative preferences along the way.
