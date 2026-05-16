@@ -181,8 +181,8 @@ python scripts/summary_helper.py --base "virtualocstory_data" add-glossary --ter
 ```
 virtualocstory/
 ├── SKILL.md                       # 技能定义（由 Claude Code 加载）
-├── README.md                      # 英文版 README
-├── README.zh-CN.md                # 本文件（中文版 README）
+├── README.md                      # 本文件（中文版 README）
+├── README.en-US.md                # 英文版 README
 ├── assets/
 │   └── oc_template.json           # 默认角色档案模板
 ├── evals/
