@@ -3,6 +3,7 @@
 A [Claude Code](https://claude.ai/code) skill for co-creating Original Characters (OCs) with AI and writing stories about them.
 
 [切换到中文](https://github.com/Okbackv/VirtualOCstory/blob/main/README.zh-CN.md)
+
 ## Overview
 
 VirtualOCstory turns Claude Code into your personal OC (Original Character) assistant. It helps you create detailed character profiles, build fictional worlds, track character relationships, manage special terminology, generate stories, and export them as `.txt` or `.docx` files — all while learning about your creative preferences along the way.
@@ -34,7 +35,7 @@ pip install python-docx
 In Claude Code, type:
 
 ```
-调用virtualOCstory skill。我想创建一个OC，名字叫林月。
+Use virtualOCstory skill. I wanna create an OC and the name is Alex.
 ```
 
 The AI will guide you through creating your first Original Character, asking thoughtful follow-up questions to flesh out the profile.
@@ -48,7 +49,7 @@ Simply tell Claude you want to create a character. The skill will prompt you for
 - Hobbies, catchphrases, speaking style
 - Background story, likes/dislikes, abilities, occupation
 
-All undefined terms you mention (like a magic system called "化形") will be noted and the AI will ask for clarification.
+All undefined terms you mention (like a magic system called "Transformation") will be noted and the AI will ask for clarification.
 
 ### Building Your World
 
@@ -65,7 +66,7 @@ Ask Claude to write a story involving your OCs. The skill will:
 ### Exporting
 
 ```
-请把「林月第一次化形」的故事导出为docx文件。
+Please export the story "Alex's Transformation for the First Time" as a docx file.
 ```
 
 ## Data Structure
@@ -108,7 +109,7 @@ Helper scripts are available for automation:
 
 ```bash
 # Initialize a new OC project and create a character
-python scripts/init_oc_project.py --name "林月" --base "virtualocstory_data"
+python scripts/init_oc_project.py --name "Alex" --base "virtualocstory_data"
 
 # Export a story to text
 python scripts/export_txt.py --source "path/to/story.md" --output "output/story.txt"
@@ -117,13 +118,13 @@ python scripts/export_txt.py --source "path/to/story.md" --output "output/story.
 python scripts/export_docx.py --source "path/to/story.md" --output "output/story.docx" --title "Story Title"
 
 # Append a key experience
-python scripts/summary_helper.py --base "virtualocstory_data" add-experience --oc "林月" --category key-events --content "..."
+python scripts/summary_helper.py --base "virtualocstory_data" add-experience --oc "Alex" --category key-events --content "..."
 
 # Search all OC data
 python scripts/summary_helper.py --base "virtualocstory_data" search --keyword "birthday"
 
 # Add a glossary term
-python scripts/summary_helper.py --base "virtualocstory_data" add-glossary --term "化形" --definition "A transformation magic"
+python scripts/summary_helper.py --base "virtualocstory_data" add-glossary --term "Transformation" --definition "A transformation magic"
 ```
 
 ## OC Profile Schema
