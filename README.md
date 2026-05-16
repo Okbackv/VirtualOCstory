@@ -1,202 +1,203 @@
 # VirtualOCstory
 
-A [Claude Code](https://claude.ai/code) skill for co-creating Original Characters (OCs) with AI and writing stories about them.
+一个用于与 AI 共同创作原创角色（OC）并为其编写故事的 [Claude Code](https://claude.ai/code) 技能。
 
-[切换到中文](https://github.com/Okbackv/VirtualOCstory/blob/main/README.zh-CN.md)
+[Switch to English](https://github.com/Okbackv/VirtualOCstory/blob/main/README.en-US.md)
 
-## Overview
+## 概述
 
-VirtualOCstory turns Claude Code into your personal OC (Original Character) assistant. It helps you create detailed character profiles, build fictional worlds, track character relationships, manage special terminology, generate stories, and export them as `.txt` or `.docx` files — all while learning about your creative preferences along the way.
+VirtualOCstory 将 Claude Code 变成你的个人 OC（原创角色）助手。它可以帮助你创建详细的角色档案、构建虚构世界、追踪角色关系、管理专有术语、生成故事，并导出为 `.txt` 或 `.docx` 文件——同时在此过程中逐步了解你的创作偏好。
 
-## Features
+## 功能特性
 
-- **OC Profile Management** — Create and edit structured profiles with fields like MBTI, personality traits, appearance, backstory, catchphrases, speaking style, hobbies, abilities, and more
-- **World-Building** — Define world settings, magic systems, technology levels, factions, and locations
-- **Relationship Mapping** — Track how your OCs know each other, with cross-referencing between linked characters
-- **Glossary Management** — Record special terminology unique to your world (magic systems, cultural concepts, etc.)
-- **Story Generation** — Write fiction based on your OCs and their world, with structured story templates for different genres and lengths
-- **AI Learning & Summarization** — After each interaction, the AI summarizes what it learned about your characters and saves these insights for future reference
-- **Smart Recall** — When you mention an OC name, special term, or past event, the skill surfaces relevant context automatically
-- **Export** — Export stories to `.txt` (plain text) or `.docx` (formatted Word document with Chinese font support)
+- **OC 档案管理** — 创建和编辑结构化角色档案，涵盖 MBTI、性格特征、外貌、背景故事、口头禅、说话风格、爱好、能力等字段
+- **世界观构建** — 定义世界设定、魔法体系、科技水平、势力派系和地点
+- **关系图谱** — 追踪 OC 之间的关系，支持关联角色之间的交叉引用
+- **术语表管理** — 记录你世界中独有的专有术语（魔法体系、文化概念等）
+- **故事生成** — 基于你的 OC 及其世界进行小说创作，提供适用于不同类型和篇幅的结构化故事模板
+- **AI 学习与总结** — 每次互动后，AI 会总结它对角色所了解的新内容，并保存这些洞察供未来参考
+- **智能召回** — 当你提到某个 OC 的名字、专有术语或过去的事件时，技能会自动调取相关上下文
+- **导出功能** — 将故事导出为 `.txt`（纯文本）或 `.docx`（带中文字体支持的格式化 Word 文档）
 
-## Installation
+## 安装
 
-1. Copy the `virtualocstory` folder into your project's `.agents/skills/` directory (for project-level use) or `~/.claude/skills/` (for global use).
-2. Install Python dependencies:
+1. 将 `virtualocstory` 文件夹复制到项目的 `.agents/skills/` 目录（项目级使用）或 `~/.claude/skills/`（全局使用）。
+2. 安装 Python 依赖：
 
 ```bash
 pip install python-docx
 ```
 
-3. That's it — Claude Code will automatically discover the skill.
+3. 完成 — Claude Code 会自动发现该技能。
 
-## Quick Start
+## 快速开始
 
-In Claude Code, type:
-
-```
-Use virtualOCstory skill. I wanna create an OC and the name is Alex.
-```
-
-The AI will guide you through creating your first Original Character, asking thoughtful follow-up questions to flesh out the profile.
-
-## Usage
-
-### Creating an OC
-
-Simply tell Claude you want to create a character. The skill will prompt you for:
-- Name, gender, personality (MBTI), birthday, height, appearance
-- Hobbies, catchphrases, speaking style
-- Background story, likes/dislikes, abilities, occupation
-
-All undefined terms you mention (like a magic system called "Transformation") will be noted and the AI will ask for clarification.
-
-### Building Your World
-
-Define your world's rules, history, geography, and culture. The skill maintains both a narrative `world.md` and a structured `world.json` with fields for magic systems, technology levels, factions, and locations.
-
-### Writing Stories
-
-Ask Claude to write a story involving your OCs. The skill will:
-1. Load all relevant character profiles, relationships, and world settings
-2. Confirm the story scope (which OCs, premise, tone, length)
-3. Draft the story in markdown under the OC's stories directory
-4. Export to `.txt` or `.docx` on request
-
-### Exporting
+在 Claude Code 中输入：
 
 ```
-Please export the story "Alex's Transformation for the First Time" as a docx file.
+调用virtualOCstory skill。我想创建一个OC，名字叫林月。
 ```
 
-## Data Structure
+AI 将引导你创建第一个原创角色，通过贴切的追问来丰富角色档案。
 
-All your OC data lives in a `virtualocstory_data/` directory:
+## 使用方法
+
+### 创建 OC
+
+只需告诉 Claude 你想创建一个角色。技能会逐步提示你输入：
+- 姓名、性别、性格（MBTI）、生日、身高、外貌
+- 爱好、口头禅、说话风格
+- 背景故事、喜好/厌恶、能力、职业
+
+你提到的所有未定义的术语（例如名为"化形"的魔法体系）都会被记录，AI 会后续询问以明确其含义。
+
+### 构建世界观
+
+定义世界的规则、历史、地理和文化。技能同时维护叙述性的 `world.md` 和结构化的 `world.json`，后者涵盖魔法体系、科技水平、势力派系和地点等字段。
+
+### 编写故事
+
+让 Claude 编写一个涉及你的 OC 的故事。技能将：
+1. 加载所有相关的角色档案、关系网络和世界设定
+2. 确认故事范围（涉及哪些 OC、故事前提、基调、篇幅）
+3. 在 OC 的 stories 目录下以 Markdown 格式起草故事
+4. 根据需要导出为 `.txt` 或 `.docx`
+
+### 导出
+
+```
+请把「林月第一次化形」的故事导出为docx文件。
+```
+
+## 数据结构
+
+所有 OC 数据存储在 `virtualocstory_data/` 目录中：
 
 ```
 virtualocstory_data/
 ├── ocs/
 │   └── <oc-name>/
-│       ├── profile.json          # Structured profile data
-│       ├── profile.md            # Narrative bio + AI notes
+│       ├── profile.json          # 结构化角色档案数据
+│       ├── profile.md            # 叙述性简介 + AI 笔记
 │       ├── experiences/
-│       │   ├── key-events.md     # Major story milestones
-│       │   └── daily.md          # Everyday moments
-│       ├── relationships.md      # Character connections
-│       └── stories/              # Story drafts
+│       │   ├── key-events.md     # 重要故事里程碑
+│       │   └── daily.md          # 日常片段
+│       ├── relationships.md      # 角色关系
+│       └── stories/              # 故事草稿
 ├── world-settings/
-│   ├── world.md                  # World narrative
-│   └── world.json                # Structured world rules
+│   ├── world.md                  # 世界观叙述
+│   └── world.json                # 结构化世界观规则
 ├── glossary/
-│   └── glossary.md               # Special terminology
+│   └── glossary.md               # 专有术语
 ├── global-summaries/
-│   └── ai-insights.md            # Cross-OC observations
-└── output/                       # Exported .txt / .docx files
+│   └── ai-insights.md            # 跨 OC 观察总结
+└── output/                       # 导出的 .txt / .docx 文件
 ```
 
-## Scripts
+## 脚本
 
-Helper scripts are available for automation:
+提供辅助脚本用于自动化操作：
 
-| Script | Purpose |
+| 脚本 | 用途 |
 |--------|---------|
-| `scripts/init_oc_project.py` | Initialize project structure and OC folders |
-| `scripts/export_txt.py` | Export markdown stories to plain text |
-| `scripts/export_docx.py` | Export markdown stories to formatted .docx |
-| `scripts/summary_helper.py` | Manage AI notes, experiences, glossary, and search |
+| `scripts/init_oc_project.py` | 初始化项目结构和 OC 文件夹 |
+| `scripts/export_txt.py` | 将 Markdown 故事导出为纯文本 |
+| `scripts/export_docx.py` | 将 Markdown 故事导出为格式化 .docx |
+| `scripts/summary_helper.py` | 管理 AI 笔记、经历、术语表和搜索 |
 
-### Script Usage
+### 脚本用法
 
 ```bash
-# Initialize a new OC project and create a character
-python scripts/init_oc_project.py --name "Alex" --base "virtualocstory_data"
+# 初始化新的 OC 项目并创建角色
+python scripts/init_oc_project.py --name "林月" --base "virtualocstory_data"
 
-# Export a story to text
+# 将故事导出为文本
 python scripts/export_txt.py --source "path/to/story.md" --output "output/story.txt"
 
-# Export a story to Word document
+# 将故事导出为 Word 文档
 python scripts/export_docx.py --source "path/to/story.md" --output "output/story.docx" --title "Story Title"
 
-# Append a key experience
-python scripts/summary_helper.py --base "virtualocstory_data" add-experience --oc "Alex" --category key-events --content "..."
+# 添加重要经历
+python scripts/summary_helper.py --base "virtualocstory_data" add-experience --oc "林月" --category key-events --content "..."
 
-# Search all OC data
+# 搜索所有 OC 数据
 python scripts/summary_helper.py --base "virtualocstory_data" search --keyword "birthday"
 
-# Add a glossary term
-python scripts/summary_helper.py --base "virtualocstory_data" add-glossary --term "Transformation" --definition "A transformation magic"
+# 添加术语表条目
+python scripts/summary_helper.py --base "virtualocstory_data" add-glossary --term "化形" --definition "一种变形魔法"
 ```
 
-## OC Profile Schema
+## OC 档案结构
 
-Each character's `profile.json` contains:
+每个角色的 `profile.json` 包含以下字段：
 
-| Field | Type | Description |
+| 字段 | 类型 | 说明 |
 |-------|------|-------------|
-| `name` | string (required) | OC's name |
-| `gender` | string | male/female/non-binary/etc. |
-| `mbti` | string | 4-letter MBTI type (e.g. INFJ, ENTP) |
-| `birthday` | string | Free format date |
-| `age` | string | Age or age description |
-| `height` | string | e.g. "168cm" |
-| `appearance` | string | Physical description |
-| `hobbies` | string[] | Interests and hobbies |
-| `catchphrases` | string[] | Signature phrases |
-| `speaking_style` | string | Tone, pace, quirks |
-| `personality_traits` | string[] | Key personality descriptors |
-| `background` | string | Backstory and origin |
-| `likes` | string[] | Things the OC likes |
-| `dislikes` | string[] | Things the OC dislikes |
-| `abilities` | string[] | Skills, powers, talents |
-| `occupation` | string | Job, role, or title |
-| `custom_fields` | object | User-defined extra fields |
+| `name` | string（必填） | OC 名字 |
+| `gender` | string | 男/女/非二元/等 |
+| `mbti` | string | 4 字母 MBTI 类型（如 INFJ、ENTP） |
+| `birthday` | string | 自由格式日期 |
+| `age` | string | 年龄或年龄描述 |
+| `height` | string | 如 "168cm" |
+| `appearance` | string | 外貌描述 |
+| `hobbies` | string[] | 兴趣与爱好 |
+| `catchphrases` | string[] | 标志性口头禅 |
+| `speaking_style` | string | 语气、语速、语言习惯 |
+| `personality_traits` | string[] | 关键性格特征 |
+| `background` | string | 背景故事与出身 |
+| `likes` | string[] | OC 喜欢的事物 |
+| `dislikes` | string[] | OC 厌恶的事物 |
+| `abilities` | string[] | 技能、能力、天赋 |
+| `occupation` | string | 职业、角色或头衔 |
+| `custom_fields` | object | 用户自定义额外字段 |
 
-## MBTI Reference
+## MBTI 参考
 
-The skill includes a built-in MBTI reference covering all 16 types with cognitive function stacks, core traits, weaknesses, and writing tips — helping you craft characters that behave consistently with their personality type.
+技能内置了 MBTI 参考资料，涵盖全部 16 种类型，包含认知功能栈、核心特征、弱点分析和写作技巧——帮助你塑造行为与其人格类型一致的角色。
 
-## Story Templates
+## 故事模板
 
-Built-in story structure templates are provided for:
-- Short stories (1000–5000 words)
-- Chapters / episodes (3000–8000 words)
-- Novel arcs (multi-chapter)
-- Genre-specific beats (Romance, Mystery, Action, Slice of Life)
+内置的故事结构模板适用于：
+- 短篇故事（1000–5000 字）
+- 章节/剧集（3000–8000 字）
+- 小说弧光（多章节）
+- 类型特定节拍（爱情、悬疑、动作、日常）
 
-## Design Principles
+## 设计理念
 
-- **User is the author** — AI is a co-creator and tool. You always have the final say over your OCs and world.
-- **Genuine curiosity** — The skill asks follow-up questions naturally, not like an interrogation.
-- **Default to markdown** — All drafts and notes are `.md` files unless you request otherwise.
-- **Categorize thoughtfully** — Not every interaction needs to be categorized. Some things are just conversation.
-- **Proactive recall** — When relevant past context exists, the AI brings it in naturally.
+- **用户是作者** — AI 是共创者和工具。你始终对你的 OC 和世界观拥有最终决定权。
+- **真诚的好奇心** — 技能自然地提出追问，而非像审问一样。
+- **默认使用 Markdown** — 所有草稿和笔记均为 `.md` 文件，除非你另有要求。
+- **有选择地归类** — 并非每次互动都需要归类。有些对话只是对话。
+- **主动召��** — 当存在相关的过往上下文时，AI 会自然地引入。
 
-## Dependencies
+## 依赖
 
 - Python 3.10+
-- `python-docx` (for `.docx` export only)
+- `python-docx`（仅用于 `.docx` 导出）
 
-## Project Structure
+## 项目结构
 
 ```
 virtualocstory/
-├── SKILL.md                       # Skill definition (loaded by Claude Code)
-├── README.md                      # This file
+├── SKILL.md                       # 技能定义（由 Claude Code 加载）
+├── README.md                      # 英文版 README
+├── README.zh-CN.md                # 本文件（中文版 README）
 ├── assets/
-│   └── oc_template.json           # Default profile template
+│   └── oc_template.json           # 默认角色档案模板
 ├── evals/
-│   └── evals.json                 # Evaluation cases
+│   └── evals.json                 # 评估用例
 ├── references/
-│   ├── mbti_reference.md          # MBTI personality type guide
-│   ├── oc_profile_schema.md       # Profile schema documentation
-│   └── story_templates.md         # Story structure templates
+│   ├── mbti_reference.md          # MBTI 人格类型指南
+│   ├── oc_profile_schema.md       # 角色档案结构文档
+│   └── story_templates.md         # 故事结构模板
 └── scripts/
-    ├── init_oc_project.py         # Project/OC initialization
-    ├── export_txt.py              # TXT export
-    ├── export_docx.py             # DOCX export
-    └── summary_helper.py          # AI notes, search, glossary
+    ├── init_oc_project.py         # 项目/OC 初始化
+    ├── export_txt.py              # TXT 导出
+    ├── export_docx.py             # DOCX 导出
+    └── summary_helper.py          # AI 笔记、搜索、术语表
 ```
 
-## License
+## 许可证
 
 MIT
